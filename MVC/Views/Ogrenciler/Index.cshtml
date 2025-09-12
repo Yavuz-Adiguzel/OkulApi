@@ -1,0 +1,19 @@
+﻿@model List<MVC.Models.Ogrenci>
+
+<h2>Öğrenci Listesi</h2>
+<a asp-action="Create" class="btn btn-primary">Yeni Öğrenci Ekle</a>
+<table class="table table-bordered mt-3">
+    <tr>
+        <th>ID</th>
+        <th>Ad Soyad</th>
+    </tr>
+
+    @foreach(var x in Model)
+    {
+        <tr>
+            <td>@x.Id</td>
+            <td>@x.AdiSoyadi</td>
+        </tr>
+    }
+
+    </table>

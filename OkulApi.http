@@ -1,0 +1,6 @@
+@OkulApi_HostAddress = http://localhost:5189
+
+GET {{OkulApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
