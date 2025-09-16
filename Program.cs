@@ -7,6 +7,17 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<EokulContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+                   .AllowAnyMethod()
+                   .AllowAnyHeader();
+        });
+});
+
 builder.Services.AddControllers();
 
 builder.Services.AddOpenApi();
@@ -32,5 +43,7 @@ app.MapControllers();
 app.UseSwagger();
 
 app.UseSwaggerUI();
+
+app.UseCors("AllowAll");
 
 app.Run();

@@ -84,8 +84,6 @@ namespace OkulApi.Controllers
             return Ok(drs);
         }
 
-
-
         #endregion
 
         #region Öğrenci güncelleme
